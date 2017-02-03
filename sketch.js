@@ -1,17 +1,38 @@
+var bubbles = [];
+
 function setup() {
   createCanvas(600, 400);
   
-  background(250, 250, 100);
+}
+
+function mouseDragged() {
+  bubbles.push(new Bubble(mouseX, mouseY));
 }
 
 function draw() {
-  
-  noStroke();
-  fill(250, 200, 200, 50);
-  ellipse(mouseX, mouseY, 25, 25);
+  background(0);
+  for (var i = 0; i < bubbles.length; i++) {
+    bubbles[i].move();
+    bubbles[i].display();
+  }
+  if (bubbles.length > 50) {
+    bubbles.splice(0, 2);
+  }
   
 }
 
-function mousePressed() {
-  background(250, 250, 100);
+function Bubble(x, y) {
+  this.x = x;
+  this.y = y;
+  
+  this.display = function() {
+    stroke(255);
+    fill(255,0, 150, 50);
+    ellipse(this.x, this.y, 24, 24);
+  }
+  
+  this.move = function() {
+    this.x = this.x + random(-1, 1);
+    this.y = this.y + random(-1, 1);
+  }
 }
