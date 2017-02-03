@@ -15,8 +15,8 @@ function draw() {
     bubbles[i].move();
     bubbles[i].display();
   }
-  if (bubbles.length > 50) {
-    bubbles.splice(0, 2);
+  if (bubbles.length > 100) {
+    bubbles.splice(0, 1);
   }
   
 }
