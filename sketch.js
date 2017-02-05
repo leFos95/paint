@@ -48,7 +48,7 @@ function Hoop(){
 function Ball(x, y) {
   this.x = x;
   this.y = y;
-  this.upspeed = 3;
+  this.upspeed = 5;
   this.fade = 255;
   
   this.display = function() {
