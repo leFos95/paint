@@ -23,5 +23,4 @@ function draw() {
   spot.y = random(0, height);
   fill(col.r, col.g, col.b);
   ellipse(spot.x, spot.y, 24, 24);
-  
 }
